@@ -1,0 +1,14 @@
+[HttpGet]
+public IActionResult GetAll()
+{
+    throw new Exception();
+    return Ok(_weathersService.GetAll());
+}
+
+
+# After making this update, send a request to the API Gateway and observe that the retry mechanism works.
+
+curl http://127.0.0.1:9080/api/weathers -i
+
+
+!!!If the API request receives one of the error codes 500, 502 or 503, the API Gateway will retry the number of times you specify.

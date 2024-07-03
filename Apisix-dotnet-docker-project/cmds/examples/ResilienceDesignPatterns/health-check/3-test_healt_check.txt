@@ -1,0 +1,10 @@
+[HttpGet("health")]
+public IActionResult Health()
+{
+    return Ok("Healthy");
+}
+
+
+#request
+
+curl http://127.0.0.1:9080/api/weathers -i

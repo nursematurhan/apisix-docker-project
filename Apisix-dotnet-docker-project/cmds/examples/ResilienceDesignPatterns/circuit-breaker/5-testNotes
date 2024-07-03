@@ -1,0 +1,15 @@
+How to validate API Breaker🙎 
+It is very straightforward to validate this scenario. One stupid option can be just stopping weatherapi container from docker 
+🤪 which causes the 503 Service Temporarily Unavailable error and we can see api-breaker takes the control😏 or another option 
+update the code in the WeathersController.cs file so that the endpoint returns 500 Internal Server error. 
+
+For example: 
+
+        // [HttpGet]
+        // public IActionResult GetAll()
+        // {
+        //     throw new Exception();
+
+        //     return Ok(_weathersService.GetAll());
+        // }
+

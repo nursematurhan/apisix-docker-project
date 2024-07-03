@@ -1,0 +1,5 @@
+plugins:
+ - http-logger
+ - ip-restriction
+ …
+ - api-breaker

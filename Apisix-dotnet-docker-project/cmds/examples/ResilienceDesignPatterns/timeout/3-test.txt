@@ -1,0 +1,10 @@
+[HttpGet]
+public IActionResult GetAll()
+{
+    System.Threading.Thread.Sleep(10000); // 10 saniye gecikme
+    return Ok(_weathersService.GetAll());
+}
+
+
+#request
+curl http://127.0.0.1:9080/api/weathers -i

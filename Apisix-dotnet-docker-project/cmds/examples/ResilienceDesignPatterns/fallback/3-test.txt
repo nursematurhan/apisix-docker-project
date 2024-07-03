@@ -1,0 +1,24 @@
+3. Creating a Fallback API
+
+Define the relevant endpoints in your primary and fallback APIs.
+
+[HttpGet("weathers")]
+public IActionResult GetWeathers()
+{
+    throw new Exception(); // Primary API'de hata oluşturmak için
+    return Ok(_weathersService.GetAll());
+}
+
+
+[HttpGet("fallback/weathers")]
+public IActionResult GetFallbackWeathers()
+{
+    return Ok(new List<Weather>() {
+        new Weather() { Id = 1, Name = "Fallback Weather 1", Price = 10 },
+        new Weather() { Id = 2, Name = "Fallback Weather 2", Price = 20 }
+    });
+}
+
+#request
+curl http://127.0.0.1:9080/api/weathers -i
+

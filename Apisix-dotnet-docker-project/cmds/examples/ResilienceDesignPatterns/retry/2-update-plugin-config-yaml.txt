@@ -1,0 +1,4 @@
+plugins:
+  - http-logger
+  - ip-restriction
+  - proxy-rewrite
